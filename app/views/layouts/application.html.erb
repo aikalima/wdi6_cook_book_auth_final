@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookbook</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container-fluid">
+
+<%= render 'layouts/header' %>
+<section>
+  <div class="row-fluid">
+    <div class="span2">
+      <ul class="nav nav-tabs nav-stacked">
+        <li><%= link_to('Books', books_path) %></li>
+        <li><%= link_to('Recipes', recipes_path) %></li>
+        <li><%= link_to('Ingredients', ingredients_path) %></li>
+      </ul>
+    </div>
+    <div class="span10">
+      <%flash.each do|key,value|%>
+              <div class="alert alert-<%=key%>"> <%=value%> </div>
+      <%end%>
+      <%= yield %>
+    </div>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+</section>
+
+</div>
+
+</body>
+</html>

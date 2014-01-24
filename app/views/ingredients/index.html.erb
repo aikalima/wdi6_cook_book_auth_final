@@ -1,0 +1,21 @@
+<ul class="nav nav-pills">
+  <li>
+<%= link_to('New Ingredient', new_ingredient_path) %>
+  </li>
+</ul>
+
+<table class="table .table-striped">
+<% @ingredients.each do |ingredient| %>
+  <tr>
+    <td>
+        <p class="lead"><%= link_to(ingredient.name, ingredient) %>
+        <p><%= ingredient.measurement %>
+        <p><%= number_to_currency ingredient.cost %>
+      </td>
+    <td>
+      <%= image_tag(ingredient.image, size: "100x100") %>
+    </td>
+</tr>
+<% end %>
+</table>
+

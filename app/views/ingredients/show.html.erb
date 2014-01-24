@@ -1,0 +1,16 @@
+<ul class="nav nav-pills">
+  <li><%= link_to('New Ingredient', new_ingredient_path) %></li>
+  <li><%= link_to('Edit Ingredient', edit_ingredient_path(@ingredient)) %></li>
+  <li><%= link_to('Delete Ingredient', @ingredient, :method => :delete, :confirm => 'Are you sure?') %></li>
+</ul>
+
+<div class="row">
+  <div class="span3 offset1">
+   <p class="lead"><%= @ingredient.name %>
+   <p><%= @ingredient.measurement %>
+   <p><%= number_to_currency @ingredient.cost %>
+  </div>
+  <div class="span8">
+    <p class="text-warning"><%= image_tag(@ingredient.image) %></p>
+  </div>
+</ul>

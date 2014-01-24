@@ -1,0 +1,28 @@
+== WDI Cook Book app 
+... with authentication/authorization and session management
+
+==Install instructions
+
+- clone this repo
+- cd in project root dir
+- bundle update
+- rake db:migrate
+- rake db:seed
+- start rails server
+
+
+==Things to pay attention to 
+
+- app/models/user.rb
+- app/controllers/users_controller.rb
+- app/controllers/sessions_controller.rb
+- app/helpers/sessions_helper.rb
+- app/views/sessions/new.html.erb (sign in page)
+- app/views/users/new.html.erb (sign up page)
+- app/views/users/show.html.erb (my profile page)
+- app/views/layouts/_header.html.erb (navigation)
+
+
+
+
+
