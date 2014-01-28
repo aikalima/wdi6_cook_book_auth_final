@@ -23,4 +23,4 @@ r1.ingredients = [i1, i2, i4]
 r2.ingredients = [i1, i2, i4, i5, i6]
 r3.ingredients = [i2, i3, i4]
 
-#User.create(:name => 'Markus',  email: "mguehrs@gmail.com", password: "foobar123", password_confirmation: "foobar123")
+User.create(:name => 'Markus',  email: "mguehrs@gmail.com", password: "foobar123", password_confirmation: "foobar123")
