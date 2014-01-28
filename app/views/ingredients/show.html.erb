@@ -5,12 +5,12 @@
 </ul>
 
 <div class="row">
-  <div class="span3 offset1">
+  <div class="col-md-3 col-sm-3">
    <p class="lead"><%= @ingredient.name %>
    <p><%= @ingredient.measurement %>
    <p><%= number_to_currency @ingredient.cost %>
   </div>
-  <div class="span8">
-    <p class="text-warning"><%= image_tag(@ingredient.image) %></p>
+  <div class="col-md-8 col-sm-8">
+    <%= image_tag(@ingredient.image) %>
   </div>
 </ul>

@@ -8,7 +8,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
   def create
-    recipe = Recipe.create(params[:recipe])
+    new_recipe = params.require(:recipe).permit(:name, :course, :cooktime, :servingsize, :instructions, :image, :book_id, :ingredient_ids)
+    recipe = Recipe.create(new_recipe)
     redirect_to(recipe)
   end
   def show

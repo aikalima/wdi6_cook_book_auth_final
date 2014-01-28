@@ -1,31 +1,32 @@
 
+
 <ul class="nav nav-pills">
   <li><%= link_to('New Book', new_book_path) %></li>
   <li><%= link_to('Delete Book', @book, :method => :delete, :confirm => 'Are you sure?') %></li>
   <li><%= link_to('Edit Book', edit_book_path(@book)) %></li>
 </ul>
 
-
 <div class="row">
-     <div class="span3 offset1">
+     <div class="col-md-3">
       <p class="lead"><%= link_to(@book.title, @book) %></p>
       <p class="text-info"><%= @book.cuisine %></p>
       <p class="text-info"><%= @book.chef %></p>
     </div>
-    <div class="span8">
+    <div class="col-md-8">
       <p class="text-warning"><%= image_tag(@book.image) %></p>
     </div>
 </div>
 
 <br>
 <% @book.recipes.each do |recipe| %>
+    <p>&nbsp;</p>
   <div class="row">
-    <div class="span3 offset1">
+    <div class="col-md-5 col-sm-5">
       <p class="lead"><%= recipe.name %></p>
       <%= image_tag(recipe.image) %>
     </div>
 
-    <div class="span8">
+    <div class="col-md-7 col-sm-7">
       <% recipe.ingredients.each do |ingredient| %>
         <%= ingredient.name %>
         <%= image_tag(ingredient.image,  size: "40x40") %>
@@ -33,4 +34,5 @@
     </div>
    </div>
 <% end %>
+
 

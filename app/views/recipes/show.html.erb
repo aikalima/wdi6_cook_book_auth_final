@@ -6,16 +6,16 @@
 </ul>
 
 <div class="row">
-  <div class="span3 offset1">
+  <div class="col-md-5 col-sm-5">
     <p class="lead"><%= @recipe.name %></p>
-    <div class="span8">
-      <p class="text-warning"><%= image_tag(@recipe.image) %></p>
-    </div>
+    <%= image_tag(@recipe.image) %>
   </div>
-  <div class="span8">
+
+  <div class="col-md-7 col-sm-7">
     <% @recipe.ingredients.each do |ingredient| %>
-      <p><%= ingredient.name %>
-      <%= image_tag(ingredient.image,  size: "40x40") %></p>
+      <%= ingredient.name %>
+      <%= image_tag(ingredient.image,  size: "40x40") %>
     <% end %>
   </div>
-</div>
+ </div>
+

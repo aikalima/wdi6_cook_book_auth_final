@@ -7,14 +7,14 @@
 
 <% @recipes.each do |recipe| %>
   <div class="row">
-     <div class="span3 offset1">
+     <div class="col-md-4 col-sm-4">
       <p class="lead"><%= link_to(recipe.name, recipe) %>
       <p><%= recipe.course %>
       <p><%= recipe.cooktime %>
       <p><%= recipe.servingsize %><
       <p><%= recipe.instructions %>
     </div>
-    <div class="span8">
+     <div class="col-md-8 col-sm-8">
       <p><%= image_tag(recipe.image) %>
     </div>
   </div>

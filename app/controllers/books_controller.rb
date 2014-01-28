@@ -8,7 +8,8 @@ class BooksController < ApplicationController
     @book = Book.new
   end
   def create
-    @book = Book.create(params[:book])
+    new_book = params.require(:book).permit(:title, :cuisine, :chef, :image,:recipes)
+    @book = Book.create(new_book)
     render :show
   end
   def show

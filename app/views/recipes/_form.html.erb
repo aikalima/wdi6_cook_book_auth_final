@@ -1,26 +1,30 @@
 <%= form_for @recipe do |f| %>
-  <%= f.text_field :name, :autofocus => true %>
   <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true %>
   <br>
-  <%= f.text_field :course %>
   <%= f.label :course %>
+  <%= f.text_field :course %>
   <br>
-  <%= f.text_field :cooktime %>
   <%= f.label :cooktime %>
+  <%= f.text_field :cooktime %>
   <br>
-  <%= f.text_field :servingsize %>
   <%= f.label :servingsize %>
+  <%= f.text_field :servingsize %>
   <br>
-  <%= f.text_field :instructions %>
   <%= f.label :instructions %>
+  <%= f.text_field :instructions %>
   <br>
-  <%= f.text_field :image %>
   <%= f.label :image %>
+  <%= f.text_field :image %>
   <br>
-  <% Ingredient.order(:name).each do |ingredient| %>
-    <span><%= ingredient.name %></span>
-    <%= check_box_tag 'recipe[ingredient_ids][]', ingredient.id, ingredient.in?(@recipe.ingredients.to_a), {class: "checkbox inline"} %>
-  <% end %>
+  <div class="input-group">
+    <% Ingredient.order(:name).each do |ingredient| %>
+      <span class="input-group-addon"><%= ingredient.name %>
+      <%= check_box_tag 'recipe[ingredient_ids][]', ingredient.id, ingredient.in?(@recipe.ingredients.to_a), {class: "checkbox inline"} %>
+      </span>
+    <% end %>
+  </div>
   <p><p>
   <%= f.submit  class: "btn btn-primary" %>
 <% end %>
+

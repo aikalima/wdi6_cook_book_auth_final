@@ -8,7 +8,8 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new
   end
   def create
-    @ingredient = Ingredient.create(params[:ingredient])
+    new_ingredient = params.require(:ingredient).permit(:name, :measurement, :cost, :image)
+    @ingredient = Ingredient.create(new_ingredient)
     render :show
   end
   def show
