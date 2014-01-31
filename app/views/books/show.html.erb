@@ -11,6 +11,7 @@
       <p class="lead"><%= link_to(@book.title, @book) %></p>
       <p class="text-info"><%= @book.cuisine %></p>
       <p class="text-info"><%= @book.chef %></p>
+      <p class="text-info">Uploaded by: <%= @book.user.name %></p>
     </div>
     <div class="col-md-8">
       <p class="text-warning"><%= image_tag(@book.image) %></p>
