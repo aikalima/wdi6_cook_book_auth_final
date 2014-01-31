@@ -3,7 +3,10 @@ Recipe.delete_all
 Ingredient.delete_all
 User.delete_all
 
-b1 = Book.create(:title => 'La Cuisine', :cuisine => 'French', :chef => 'Francoise Bernard', :image => 'http://4.bp.blogspot.com/-KgaF17qZ1Gg/TbcnZg9s2BI/AAAAAAAAAuk/Y6DffqIjWJo/s1600/3_la-cuisine-everyday-french-home-cooking-by-francoise-bernard_7-best-books-on-french-cuisine.jpg')
+m = User.create(:name => 'Markus',  email: "mguehrs@gmail.com", password: "foobar123", password_confirmation: "foobar123")
+r = User.create(:name => 'Raphael', :email => "rafi.sofaer@generalassemb.ly", :password => "asdasd", :password_confirmation => "asdasd")
+
+b1 = Book.create(:user => m, :title => 'La Cuisine', :cuisine => 'French', :chef => 'Francoise Bernard', :image => 'http://4.bp.blogspot.com/-KgaF17qZ1Gg/TbcnZg9s2BI/AAAAAAAAAuk/Y6DffqIjWJo/s1600/3_la-cuisine-everyday-french-home-cooking-by-francoise-bernard_7-best-books-on-french-cuisine.jpg')
 
 r1 = Recipe.create(:name => 'Banana Pancakes', :course => 'Dessert', :cooktime => 10, :servingsize => 4, :instructions => 'Cook in pan', :image => 'http://hostedmedia.reimanpub.com/TOH/Images/Photos/37/exps1053_BB2406671D07_20_3b.jpg')
 r2 = Recipe.create(:name => 'French Chicken', :course => 'Main', :cooktime => 125, :servingsize => 3, :instructions => 'Heat Oven', :image => 'http://img4-3.myrecipes.timeinc.net/i/recipes/ck/96/11/french-chicken-ck-222717-l.jpg')
@@ -23,4 +26,3 @@ r1.ingredients = [i1, i2, i4]
 r2.ingredients = [i1, i2, i4, i5, i6]
 r3.ingredients = [i2, i3, i4]
 
-User.create(:name => 'Markus',  email: "mguehrs@gmail.com", password: "foobar123", password_confirmation: "foobar123")

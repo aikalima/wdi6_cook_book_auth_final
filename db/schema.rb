@@ -9,34 +9,35 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715030348) do
+ActiveRecord::Schema.define(version: 20140131175830) do
 
-  create_table "books", :force => true do |t|
+  create_table "books", force: true do |t|
     t.string   "title"
     t.string   "cuisine"
     t.string   "chef"
     t.text     "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
-  create_table "ingredients", :force => true do |t|
+  create_table "ingredients", force: true do |t|
     t.string   "name"
     t.string   "measurement"
     t.decimal  "cost"
     t.text     "image"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "ingredients_recipes", :id => false, :force => true do |t|
+  create_table "ingredients_recipes", id: false, force: true do |t|
     t.integer "ingredient_id"
     t.integer "recipe_id"
   end
 
-  create_table "recipes", :force => true do |t|
+  create_table "recipes", force: true do |t|
     t.string   "name"
     t.string   "course"
     t.integer  "cooktime"
@@ -44,19 +45,19 @@ ActiveRecord::Schema.define(:version => 20130715030348) do
     t.text     "instructions"
     t.text     "image"
     t.integer  "book_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
   end
 
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end

@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+.alert-error{
+	background-color: pink;
+}
