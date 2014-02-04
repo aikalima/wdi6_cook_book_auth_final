@@ -21,8 +21,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
+    user_params = params.require(:user).permit(:name, :email)
+    @user = User.find(user_params[:id])
+    @user.update_attributes(name: user_params[:name], email: user_params[:email])
     render :show
   end
 
